@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Polla Mundial 2026 — Familiar</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600&family=Archivo+Black&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.6.0/dist/tabler-icons.min.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- ====== PANTALLA: ¿QUIÉN ERES? ====== -->
+  <section id="screen-who" class="screen hidden">
+    <div class="stripe"><span class="s-yellow"></span><span class="s-blue"></span><span class="s-red"></span></div>
+    <div class="who-wrap">
+      <h1 class="display">Polla Mundial<br>2026</h1>
+      <p class="who-sub">¿Quién eres? Toca tu nombre para entrar.</p>
+      <div id="who-grid" class="who-grid">
+        <!-- Botones de nombre generados por app.js -->
+      </div>
+      <p id="who-error" class="who-error hidden"></p>
+    </div>
+  </section>
+
+  <!-- ====== PANTALLA: CARGANDO ====== -->
+  <section id="screen-loading" class="screen">
+    <div class="stripe"><span class="s-yellow"></span><span class="s-blue"></span><span class="s-red"></span></div>
+    <div class="loading-wrap">
+      <p class="display loading-ball">⚽</p>
+      <p>Cargando la polla…</p>
+    </div>
+  </section>
+
+  <!-- ====== APP PRINCIPAL ====== -->
+  <main id="app" class="hidden">
+    <div class="stripe"><span class="s-yellow"></span><span class="s-blue"></span><span class="s-red"></span></div>
+
+    <header class="app-header">
+      <div>
+        <p class="app-title display">Polla Mundial 2026</p>
+        <p id="header-greeting" class="app-sub"></p>
+      </div>
+      <button id="btn-switch-user" class="btn-ghost" title="Cambiar de persona">
+        <i class="ti ti-user-circle"></i>
+      </button>
+    </header>
+
+    <!-- Vistas (una visible a la vez) -->
+    <section id="view-tabla"    class="view"></section>
+    <section id="view-predecir" class="view hidden"></section>
+    <section id="view-partidos" class="view hidden"></section>
+    <section id="view-premios"  class="view hidden"></section>
+    <section id="view-admin"    class="view hidden"></section>
+
+    <!-- Barra de navegación inferior -->
+    <nav class="tabbar" id="tabbar">
+      <button class="tab active" data-view="tabla">
+        <i class="ti ti-list-numbers"></i><span>Tabla</span>
+      </button>
+      <button class="tab" data-view="predecir">
+        <i class="ti ti-pencil"></i><span>Predecir</span>
+      </button>
+      <button class="tab" data-view="partidos">
+        <i class="ti ti-ball-football"></i><span>Partidos</span>
+      </button>
+      <button class="tab" data-view="premios">
+        <i class="ti ti-gift"></i><span>Premios</span>
+      </button>
+      <button class="tab hidden" data-view="admin" id="tab-admin">
+        <i class="ti ti-lock"></i><span>Admin</span>
+      </button>
+    </nav>
+  </main>
+
+  <script type="module" src="app.js"></script>
+</body>
+</html>
